@@ -37,6 +37,8 @@ module Trout
           file.update
           managed_files << file
         end
+      when 'list'
+        puts managed_files.filenames
       when 'help', nil
         puts option_parser
         if arguments_left?
@@ -72,6 +74,7 @@ module Trout
         parser.separator "  help       - get usage details for a specific command"
         parser.separator "  update     - synchronize changes to a tracked file"
         parser.separator "  update-all - synchronize changes to all tracked file at once"
+        parser.separator "  list       - list all tracked files"
       end
 
       option_parser.parse!(arguments)
@@ -109,6 +112,8 @@ module Trout
         puts "Usage: trout checkout filename git_url"
       when 'update'
         puts "Usage: trout update filename"
+      when 'list'
+        puts "Usage: trout list"
       else
         unknown_command(command)
       end

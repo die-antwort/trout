@@ -34,6 +34,11 @@ module Trout
       self[managed_file.filename] = managed_file
     end
 
+    def filenames
+      read
+      files.keys
+    end
+    
     private
 
     def read
