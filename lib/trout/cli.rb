@@ -31,6 +31,12 @@ module Trout
         end_arguments
         file.update
         managed_files << file
+      when 'update-all'
+        end_arguments
+        managed_files.each do |file|
+          file.update
+          managed_files << file
+        end
       when 'help', nil
         puts option_parser
         if arguments_left?
@@ -62,9 +68,10 @@ module Trout
         parser.separator ""
         parser.separator "Commands:"
         parser.separator ""
-        parser.separator "  checkout - start tracking a file from another repository"
-        parser.separator "  help     - get usage details for a specific command"
-        parser.separator "  update   - synchronize changes to a tracked file"
+        parser.separator "  checkout   - start tracking a file from another repository"
+        parser.separator "  help       - get usage details for a specific command"
+        parser.separator "  update     - synchronize changes to a tracked file"
+        parser.separator "  update-all - synchronize changes to all tracked file at once"
       end
 
       option_parser.parse!(arguments)

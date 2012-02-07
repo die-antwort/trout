@@ -23,6 +23,13 @@ module Trout
       write
     end
 
+    def each
+      read
+      files.values.each do |attributes|
+        yield ManagedFile.new(attributes)
+      end
+    end
+    
     def <<(managed_file)
       self[managed_file.filename] = managed_file
     end
