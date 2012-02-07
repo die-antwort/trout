@@ -38,7 +38,7 @@ module Trout
           managed_files << file
         end
       when 'list'
-        puts managed_files.filenames
+        puts managed_files.filenames.sort
       when 'help', nil
         puts option_parser
         if arguments_left?
