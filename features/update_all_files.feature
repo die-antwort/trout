@@ -1,4 +1,3 @@
-@cur
 Feature: Update all files at once
 
   Background:
