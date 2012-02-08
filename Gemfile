@@ -1,6 +1,4 @@
 source "http://rubygems.org"
-gem "cucumber"
-gem "aruba"
-gem "rake"
-gem "rspec", :require => false
 
+# Specify your gem's dependencies in da-js.gemspec
+gemspec

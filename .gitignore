@@ -3,4 +3,6 @@ tmp
 *~
 *.swp
 pkg
+.bundle
+Gemfile.lock
 
